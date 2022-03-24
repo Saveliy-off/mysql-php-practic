@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
-        <form method="post" action="server.php">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Имя пользователя</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Пароль</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" name="exampleInputPassword1">
-          </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Проверить</button>
-        </form>
-    </div>
+    <form action="server.php" method="post">
+        <input type="text" placeholder="Введите ваше имя" name="name"><br>
+        <p>Выберите вашу группу</p>
+        <select size="1" name="group">
+            <option disabled>Выберите вашу группу</option>
+            <option value="t1">ПИ 11</option>
+            <option value="t2">ПИ 21</option>
+            <option value="t3">ПИ 31</option>
+        </select><br>
+        <p>Выберите ваш пол</p>
+        <select size="1" name="pol">
+            <option disabled>Выберите ваш пол</option>
+            <option value="m">М</option>
+            <option value="d">Ж</option>
+        </select><br>
+        <input type="text" placeholder="Чем хотите заняться?" name="zanatioe">
+        <button>Отправить</button>
+    </form>
 </body>
 </html>

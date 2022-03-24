@@ -7,9 +7,11 @@ $group = $_POST['group'];
 $pol = $_POST['pol'];
 $zanatioe = $_POST['zanatioe'];
 
-$_SESSION['users'] = [
+$_SESSION['user'] = [
 'name' => $name,
 'group' => $group,
 'pol' => $pol,
- 'zanatie' => $zanatioe
+'zanatie' => $zanatioe
 ];
+
+header('Location: index.php');

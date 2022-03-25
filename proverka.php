@@ -1,21 +1,28 @@
 <?php
 
-session_start();
-
 $name = $_POST['name'];
 
-echo 'Добрый день! '. $_SESSION['user']['name'] . ' Вот ваша заявка:<br>';
 
-if ($_SESSION['user']['pol'] == 'm') {
-	echo 'Ваш пол: Мужской<br>';
+$db = mysqli_connect('localhost', 'root', '', 'root');
+
+$result = mysqli_query($db, "SELECT * FROM `zayavka` WHERE `name`='$name'");
+if (mysqli_num_rows($result) > 0) {
+	$row = mysqli_fetch_assoc($result);
+		echo 'Добрый день! '. $row['name'] . ' Вот ваша заявка:<br>';
+
+	if ($row['pol'] == 'm') {
+		echo 'Ваш пол: Мужской<br>';
+	}else{
+		echo 'Ваш пол: Женский<br>';
+	}
+	if ($row['groups'] == 't1') {
+		echo 'Ваша группа: ПИ 11<br>';
+	}elseif($row['groups'] == 't2'){
+		echo 'Ваша группа: ПИ 21<br>';
+	}else{
+		echo 'Ваша группа: ПИ 31<br>';
+	}
+	echo 'Вот чем вы хотите заняться ' . $row['zanatie'];
 }else{
-	echo 'Ваш пол: Женский<br>';
+	echo '<img src="1.gif" alt="">';
 }
-if ($_SESSION['user']['group'] == 't1') {
-	echo 'Ваша группа: ПИ 11<br>';
-}elseif($_SESSION['user']['group'] == 't2'){
-	echo 'Ваша группа: ПИ 21<br>';
-}else{
-	echo 'Ваша группа: ПИ 31<br>';
-}
-echo 'Вот чем вы хотите заняться ' . $_SESSION['user']['zanatie'];

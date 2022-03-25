@@ -8,7 +8,8 @@ $db = mysqli_connect('localhost', 'root', '', 'root');
 $result = mysqli_query($db, "SELECT * FROM `zayavka` WHERE `name`='$name'");
 if (mysqli_num_rows($result) > 0) {
 	$row = mysqli_fetch_assoc($result);
-		echo 'Добрый день! '. $row['name'] . ' Вот ваша заявка:<br>';
+        echo '<h1>Вот ваша заявка:</h1><br>';
+		echo '<div class="box"><h2>Добрый день! '. $row['name'] . '<br>';
 
 	if ($row['pol'] == 'm') {
 		echo 'Ваш пол: Мужской<br>';
@@ -22,7 +23,7 @@ if (mysqli_num_rows($result) > 0) {
 	}else{
 		echo 'Ваша группа: ПИ 31<br>';
 	}
-	echo 'Вот чем вы хотите заняться ' . $row['zanatie'];
+	echo 'Вот чем вы хотите заняться: ' . $row['zanatie'] . '</h2></div>';
 }else{
 	echo '<img src="1.gif" alt="">';
 }

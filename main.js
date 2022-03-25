@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
     $("#search").keyup(function() {
         var name = $('#search').val();
         if (name === "") {

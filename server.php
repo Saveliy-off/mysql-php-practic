@@ -11,5 +11,4 @@ $query = "INSERT INTO `zayavka`(`name`, `groups`, `pol`, `zanatie`) VALUES ('$na
 
 mysqli_query($db, $query);
 
-
-header('Location: index.php');
+header('Location: index.html');
